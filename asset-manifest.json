@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/iAngels-proj/static/css/main.cf89a188.chunk.css",
-    "main.js": "/iAngels-proj/static/js/main.d3eeb0b1.chunk.js",
-    "main.js.map": "/iAngels-proj/static/js/main.d3eeb0b1.chunk.js.map",
+    "main.css": "/iAngels-proj/static/css/main.80c65279.chunk.css",
+    "main.js": "/iAngels-proj/static/js/main.2cf8dba7.chunk.js",
+    "main.js.map": "/iAngels-proj/static/js/main.2cf8dba7.chunk.js.map",
     "runtime-main.js": "/iAngels-proj/static/js/runtime-main.469af378.js",
     "runtime-main.js.map": "/iAngels-proj/static/js/runtime-main.469af378.js.map",
     "static/js/2.4c9d558a.chunk.js": "/iAngels-proj/static/js/2.4c9d558a.chunk.js",
     "static/js/2.4c9d558a.chunk.js.map": "/iAngels-proj/static/js/2.4c9d558a.chunk.js.map",
     "index.html": "/iAngels-proj/index.html",
-    "static/css/main.cf89a188.chunk.css.map": "/iAngels-proj/static/css/main.cf89a188.chunk.css.map",
+    "static/css/main.80c65279.chunk.css.map": "/iAngels-proj/static/css/main.80c65279.chunk.css.map",
     "static/js/2.4c9d558a.chunk.js.LICENSE.txt": "/iAngels-proj/static/js/2.4c9d558a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.469af378.js",
     "static/js/2.4c9d558a.chunk.js",
-    "static/css/main.cf89a188.chunk.css",
-    "static/js/main.d3eeb0b1.chunk.js"
+    "static/css/main.80c65279.chunk.css",
+    "static/js/main.2cf8dba7.chunk.js"
   ]
 }
