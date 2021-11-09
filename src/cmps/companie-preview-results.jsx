@@ -10,8 +10,7 @@ export class CompaniePreviewResult extends Component {
                 <span>
                     {companie.name.length < 25 ? companie.name : companie.name.slice(0, 50) + '...'}
                 </span>
-               
-                    <button onClick={() => { addNewCompanie(companie.ticker) }}>add</button>
+                    <button onClick={() => { addNewCompanie(companie) }}>add</button>
             </div>
 
         )

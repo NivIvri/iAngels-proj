@@ -5,7 +5,7 @@ import { CompaniePreview } from './companie-preview'
 export function CompanieList({ companies }) {
     return (<>
         {companies.map((companie, idx) => {
-                return<tr> <CompaniePreview key={idx} companie={companie} idx={idx} />
+                return<tr key={companie._id}><CompaniePreview key={companie._id} companie={companie} idx={idx} />
             </tr>
         }
         )}

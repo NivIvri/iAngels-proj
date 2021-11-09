@@ -13,17 +13,26 @@ export class HomePage extends Component {
         this.loadCompaniesData()
     }
 
-    addNewCompanie = async (companieTicker) => {
-        await DbService.post('companie', companieTicker)
+    addNewCompanie = async (companie) => {
+        debugger
+        let newCompanie = await dataService.getCompanieData(companie.ticker)
+        if(!newCompanie) return
+        newCompanie = {
+            name: newCompanie.name,
+            symbol: newCompanie.symbol,
+            country: newCompanie.country,
+            logo: newCompanie.logo,
+        }
+        await DbService.post('companie', newCompanie)
         this.loadCompaniesData()
     }
 
     loadCompaniesData = async () => {
-        const companiesTicker = await DbService.query('companie')
-        const unresolvedResults = companiesTicker.map(async (companie) => {
-            return await dataService.getCompanieData(companie)
-        })
-        let dataCompaniesResults = await Promise.all(unresolvedResults)
+        const dataCompaniesResults = await DbService.query('companie')
+        //const unresolvedResults = companiesTicker.map(async (companie) => {
+        //    return await dataService.getCompanieData(companie)
+        //})
+        //let dataCompaniesResults = await Promise.all(unresolvedResults)
         this.setState({ companiesData: dataCompaniesResults })
     }
 
@@ -36,18 +45,21 @@ export class HomePage extends Component {
         return (
             <MainLayout>
                 <SearchCompanie addNewCompanie={this.addNewCompanie} />
-                    <table>
-                        <thead>
-                            <th>id</th>
+                <table>
+                    <thead>
+                        <tr key='1'>
+
+                            <th>logo</th>
                             <th>name</th>
                             <th>ticker</th>
-                            <th>locale</th>
-                            <th>type</th>
-                        </thead>
-                        <tbody>
-                            <CompanieList companies={companiesData} />
-                        </tbody>
-                    </table>
+                            <th>country</th>
+                            <th>employees</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <CompanieList companies={companiesData} />
+                    </tbody>
+                </table>
             </MainLayout>
         )
     }

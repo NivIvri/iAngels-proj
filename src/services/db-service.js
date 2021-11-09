@@ -12,15 +12,50 @@ export const DbService = {
 };
 
 const ID_FIELD = '_id';
-
 function query(collectionName) {
     var collection = utilService.loadFromStorage(collectionName);
     if (!collection || !collection.length) {
-        collection = ['ARBE', 'AAPL', 'ADI', 'ADP', 'FB', 'TSLA', 'AEP', 'AMGN', 'TWTR', 'GOOGL',]
+        collection = [{
+            name: "Apple Inc.",
+            symbol: "AAPL",
+            country: "usa",
+            employees: "123000",
+            logo: "https://s3.polygon.io/logos/aapl/logo.png",
+            _id: "101a"
+        },
+        {
+            name: "Analog Devices Inc",
+            symbol: "ADI",
+            country: "usa",
+            employees: "15300",
+            logo: "https://s3.polygon.io/logos/adi/logo.png",
+            _id: "102a"
+        },
+        {
+            name: "Automatic Data Processing Inc.",
+            symbol: "ADP",
+            country: "usa",
+            employees: "57000",
+            logo: "https://s3.polygon.io/logos/adp/logo.png",
+            _id: "103a"
+
+        },
+        
+        {
+            name: "Amyris Inc.",
+            symbol: "AMRS",
+            country: "usa",
+            employees: "414",
+            logo: "https://s3.polygon.io/logos/amrs/logo.png",
+            _id: "104a"
+        }]
+        //collection = ['ARBE','P', 'AAPL', 'ADI', 'ADP', 'FB', 'TSLA', 'AEP', 'AMGN', 'TWTR', 'GOOGL',]
         utilService.storeToStorage(collectionName, collection);
     }
     return Promise.resolve(collection);
 }
+
+
 
 async function get(collectionName, id) {
     var collection = await query(collectionName);
