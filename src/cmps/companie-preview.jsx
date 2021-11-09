@@ -3,13 +3,6 @@ import businessman from '../assets/img/businessman.png'
 import remove from '../assets/img/remove.png'
 
 export class CompaniePreview extends Component {
-    componentDidMount() {
-        console.log(this.props.companie.name);
-        console.log(this.props.companie.symbol);
-        console.log(this.props.companie.country);
-        console.log(this.props.companie.employees);
-    }
-
 
     render() {
         const { companie, idx } = this.props

@@ -8,7 +8,6 @@ export const dataService = {
     getCompanieDateSearch
 }
 async function getCompanieData(keySerch) {
-    debugger
     if (!keySerch) return []
     companieCache = storageService.loadFromStorage([keySerch])
     if (companieCache) {
@@ -46,9 +45,3 @@ async function getCompanieDateSearch(keySerch) {
         console.log('Cannwot reach server:', err);
     }
 }
-
-//https://api.polygon.io/v1/meta/symbols/${keySerch}/company?&limit=1&apiKey=pv_VVp9rQJ7d8X4aU0wI8Fw2W_GHWVOD
-
-//https://api.polygon.io/v3/reference/tickers?search=${keySerch}&active=true&sort=ticker&order=asc&limit=1&apiKey=pv_VVp9rQJ7d8X4aU0wI8Fw2W_GHWVOD
-
-

@@ -4,6 +4,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router'
 import routes from './routes'
 import { HashRouter, Link } from "react-router-dom";
+import { UserMsg } from './cmps/user-msg';
 
 
 export class RootCmp extends React.Component {
@@ -19,6 +20,7 @@ export class RootCmp extends React.Component {
                         </Switch>
                     </main>
                 </div>
+                <UserMsg/>
             </HashRouter>
         )
     }
