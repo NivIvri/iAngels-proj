@@ -40,7 +40,7 @@ function query(collectionName) {
             _id: "103a"
 
         },
-        
+
         {
             name: "Amyris Inc.",
             symbol: "AMRS",
@@ -48,7 +48,47 @@ function query(collectionName) {
             employees: "414",
             logo: "https://s3.polygon.io/logos/amrs/logo.png",
             _id: "104a"
-        }]
+        }, {
+            country: "usa",
+            logo: "https://s3.polygon.io/logos/cmct/logo.png",
+            name: "CIM Commercial Trust Corporation",
+            symbol: "CMCT",
+            _id: "QV23p5",
+
+        }, {
+            country: "usa",
+            employees: '820',
+            logo: "https://s3.polygon.io/logos/kequ/logo.png",
+            name: "Kewaunee Scientific Corporation",
+            symbol: "KEQU",
+            _id: "Z5AYPI",
+        },
+        {
+            country: "usa",
+            employees: '1176',
+            logo: "https://s3.polygon.io/logos/cwt/logo.png",
+                name: "California Water Service Group",
+            symbol: "CWT",
+            _id: "guSDQG",
+        },
+        {
+            country: "usa",
+            employees: '37205',
+            logo: "https://s3.polygon.io/logos/casy/logo.png",
+            name: "Caseys General Stores Inc.",
+            symbol: "CASY",
+            _id: "5EVRDV",
+
+        },
+        {
+            country: "usa",
+            employees: '945',
+            logo: "https://s3.polygon.io/logos/cpk/logo.png",
+            name: "Chesapeake Utilities Corporation",
+            symbol: "CPK",
+            _id: "T8Md9c",
+        }
+        ]
         //collection = ['ARBE','P', 'AAPL', 'ADI', 'ADP', 'FB', 'TSLA', 'AEP', 'AMGN', 'TWTR', 'GOOGL',]
         utilService.storeToStorage(collectionName, collection);
     }
@@ -63,7 +103,6 @@ async function get(collectionName, id) {
 }
 
 async function remove(collectionName, id) {
-    //debugger; // eslint-disable-line no-debugger
     var collection = await query(collectionName);
     var idx = collection.findIndex(curr => curr[ID_FIELD] === id);
     if (idx === -1) throw new Error('something went wrong');
@@ -75,6 +114,7 @@ async function remove(collectionName, id) {
 
 async function post(collectionName, item) {
     var collection = await query(collectionName);
+    item[ID_FIELD] = utilService.makeId()
     collection.push(item);
     utilService.storeToStorage(collectionName, collection);
     return Promise.resolve(item);

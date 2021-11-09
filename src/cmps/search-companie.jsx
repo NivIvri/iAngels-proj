@@ -34,13 +34,13 @@ export class SearchCompanie extends Component {
     render() {
         const {isOnSearch,companiesData}= this.state
         return (
-            <>
-                <input type='text' onChange={this.handleChange} />
+            <section className='search-container'>
+                <input type='text'  placeholder='Search companie' onChange={this.handleChange} />
                 {
                     isOnSearch &&
                     <SearchResult addNewCompanie={this.props.addNewCompanie} companiesData={companiesData}  />
                 }
-            </>
+            </section>
         )
     }
 }

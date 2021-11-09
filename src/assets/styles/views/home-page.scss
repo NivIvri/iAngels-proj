@@ -1,20 +1,75 @@
-table {
-    text-transform: uppercase;
+.home {
+    h1 {
+        text-align: center;
+        padding: 27px;
+        font-size: 44px;
+        font-family: "Quicksand-Bold";
+        text-transform: capitalize;
+        color: #ffe9e9cc;
+    }
 
-    width: 800px;
-    th {
-        height: 40px;
-        background: gray;
-    }
-    td {
-        padding: 10px;
-        background-color: #efeeee;
-    }
-    tr {
+    table {
+        width: 100%;
+        table-layout: fixed;
+
         img {
-            object-fit: cover;
-            height: 100px;
-            width: 100px;
+            height: 60px;
+            width: 60px;
+        }
+
+        h1 {
+            font-size: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 300;
+            //text-align: center;
+            margin-bottom: 15px;
+        }
+
+        th {
+            padding: 20px 15px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 12px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 300;
+            font-size: 15px;
+            color: #fff;
+            border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .employees {
+            display: flex;
+            align-items: center;
+            span:first-child {
+                width: 90px;
+            }
+            img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+        .remove-img {
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            &:hover {
+                width: 35px;
+                height: 35px;
+            }
         }
     }
+
+ 
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body {
+    background: -webkit-linear-gradient(left, #777c7a, #444a4b);
+    background: linear-gradient(to right, #1f2020, #3e4242);
 }

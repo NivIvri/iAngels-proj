@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { CompanieList } from '../cmps/companie-list'
 import { MainLayout } from '../cmps/layout/MainLayout'
-import { SearchCompanie } from '../cmps/SearchCompanie.jsx'
+import { SearchCompanie } from '../cmps/search-companie'
 import { dataService } from '../services/dataService'
 import { DbService } from '../services/db-service'
 
@@ -14,29 +14,30 @@ export class HomePage extends Component {
     }
 
     addNewCompanie = async (companie) => {
-        debugger
         let newCompanie = await dataService.getCompanieData(companie.ticker)
-        if(!newCompanie) return
+        if (!newCompanie) return
         newCompanie = {
             name: newCompanie.name,
             symbol: newCompanie.symbol,
             country: newCompanie.country,
             logo: newCompanie.logo,
+            employees: newCompanie.employees,
         }
         await DbService.post('companie', newCompanie)
         this.loadCompaniesData()
     }
+    onRemoveCompanie = async (companieId) => {
+        await DbService.remove('companie', companieId)
+        const companiesData = this.state.companiesData.filter(companie => {
+           return companie._id !== companieId
+        })
+        this.setState({ companiesData })
+    }
 
     loadCompaniesData = async () => {
         const dataCompaniesResults = await DbService.query('companie')
-        //const unresolvedResults = companiesTicker.map(async (companie) => {
-        //    return await dataService.getCompanieData(companie)
-        //})
-        //let dataCompaniesResults = await Promise.all(unresolvedResults)
         this.setState({ companiesData: dataCompaniesResults })
     }
-
-
 
 
     render() {
@@ -44,22 +45,27 @@ export class HomePage extends Component {
         if (!companiesData) return <div>loading....</div>
         return (
             <MainLayout>
+                <section className='home'>
+                <h1>traded companies in Nasdaq</h1>
                 <SearchCompanie addNewCompanie={this.addNewCompanie} />
                 <table>
                     <thead>
                         <tr key='1'>
-
-                            <th>logo</th>
-                            <th>name</th>
-                            <th>ticker</th>
-                            <th>country</th>
-                            <th>employees</th>
+                            <th><h1>logo</h1></th>
+                            <th><h1>name</h1></th>
+                            <th><h1>ticker</h1></th>
+                            <th><h1>employees</h1>
+                            </th>
+                            <th><h1>country</h1></th>
+                            <th><h1></h1></th>
+                           
                         </tr>
                     </thead>
                     <tbody>
-                        <CompanieList companies={companiesData} />
+                        <CompanieList onRemoveCompanie={this.onRemoveCompanie} companies={companiesData} />
                     </tbody>
                 </table>
+                </section>
             </MainLayout>
         )
     }

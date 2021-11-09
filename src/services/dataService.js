@@ -29,14 +29,14 @@ async function getCompanieData(keySerch) {
 }
 async function getCompanieDateSearch(keySerch) {
     if (!keySerch) return []
-    companieCache = storageService.loadFromStorage([keySerch])
+    companieCache = storageService.loadFromStorage([keySerch+ 'SERCH'])
     if (companieCache) {
         console.log('No need to fetch, retrieving from Cache');
         return (companieCache)
     }
     try {
         const res = await axios.get(`https://api.polygon.io/v3/reference/tickers?search=${keySerch}&active=true&sort=ticker&order=asc&limit=5&apiKey=pv_VVp9rQJ7d8X4aU0wI8Fw2W_GHWVOD`)
-        await storageService.saveToStorage([keySerch], res.data.results)
+        await storageService.saveToStorage([keySerch+ 'SERCH'], res.data.results)
         res.data.results.map(companie => {
             companie._id = utilService.makeId()
         })
