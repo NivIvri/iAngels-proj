@@ -46,7 +46,7 @@ export class HomePage extends Component {
         return (
             <MainLayout>
                 <section className='home'>
-                <h1>traded companies in Nasdaq</h1>
+                <h1 className='title'>traded companies in Nasdaq</h1>
                 <SearchCompanie addNewCompanie={this.addNewCompanie} />
                 <table>
                     <thead>
