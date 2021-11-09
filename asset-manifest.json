@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/iAngels-proj/static/css/main.81d59b74.chunk.css",
-    "main.js": "/iAngels-proj/static/js/main.3287aa56.chunk.js",
-    "main.js.map": "/iAngels-proj/static/js/main.3287aa56.chunk.js.map",
+    "main.css": "/iAngels-proj/static/css/main.d7272960.chunk.css",
+    "main.js": "/iAngels-proj/static/js/main.e635952c.chunk.js",
+    "main.js.map": "/iAngels-proj/static/js/main.e635952c.chunk.js.map",
     "runtime-main.js": "/iAngels-proj/static/js/runtime-main.469af378.js",
     "runtime-main.js.map": "/iAngels-proj/static/js/runtime-main.469af378.js.map",
     "static/js/2.4c9d558a.chunk.js": "/iAngels-proj/static/js/2.4c9d558a.chunk.js",
     "static/js/2.4c9d558a.chunk.js.map": "/iAngels-proj/static/js/2.4c9d558a.chunk.js.map",
     "index.html": "/iAngels-proj/index.html",
-    "static/css/main.81d59b74.chunk.css.map": "/iAngels-proj/static/css/main.81d59b74.chunk.css.map",
+    "static/css/main.d7272960.chunk.css.map": "/iAngels-proj/static/css/main.d7272960.chunk.css.map",
     "static/js/2.4c9d558a.chunk.js.LICENSE.txt": "/iAngels-proj/static/js/2.4c9d558a.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/iAngels-proj/static/media/Quicksand-Light.e715991b.ttf",
     "static/media/businessman.0c4b33ee.png": "/iAngels-proj/static/media/businessman.0c4b33ee.png",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.469af378.js",
     "static/js/2.4c9d558a.chunk.js",
-    "static/css/main.81d59b74.chunk.css",
-    "static/js/main.3287aa56.chunk.js"
+    "static/css/main.d7272960.chunk.css",
+    "static/js/main.e635952c.chunk.js"
   ]
 }
