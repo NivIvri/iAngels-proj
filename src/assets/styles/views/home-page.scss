@@ -6,8 +6,11 @@
         font-family: "Quicksand-Bold";
         text-transform: capitalize;
         color: #ffe9e9cc;
+        @include for-mobile-layout {
+            padding: 10px;
+            font-size: 30px;
+        }
     }
-
     table {
         width: 100%;
         table-layout: fixed;
@@ -24,6 +27,9 @@
             font-weight: 300;
             //text-align: center;
             margin-bottom: 15px;
+            @include for-mobile-layout {
+                font-size: 12px;
+            }
         }
 
         th {
@@ -33,6 +39,9 @@
             font-size: 12px;
             color: #fff;
             text-transform: uppercase;
+            @include for-mobile-layout {
+                width: 60px;
+            }
         }
         td {
             padding: 10px;
@@ -47,6 +56,9 @@
         .employees {
             display: flex;
             align-items: center;
+            @include for-mobile-layout {
+                flex-direction: column;
+            }
             span:first-child {
                 width: 90px;
             }
@@ -65,8 +77,6 @@
             }
         }
     }
-
- 
 }
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 body {

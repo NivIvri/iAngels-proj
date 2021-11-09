@@ -14,5 +14,8 @@
         background-color: #41414154;
         margin-bottom: 38px;
         box-shadow: 0 0 5px 1px #ffffff17;
+        @include for-mobile-layout {
+            width: 249px;
+        }
     }
 }
