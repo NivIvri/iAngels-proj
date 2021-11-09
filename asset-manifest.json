@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/iAngels-proj/static/css/main.cf89a188.chunk.css",
+    "main.js": "/iAngels-proj/static/js/main.e320364c.chunk.js",
+    "main.js.map": "/iAngels-proj/static/js/main.e320364c.chunk.js.map",
+    "runtime-main.js": "/iAngels-proj/static/js/runtime-main.469af378.js",
+    "runtime-main.js.map": "/iAngels-proj/static/js/runtime-main.469af378.js.map",
+    "static/js/2.ab94b47d.chunk.js": "/iAngels-proj/static/js/2.ab94b47d.chunk.js",
+    "static/js/2.ab94b47d.chunk.js.map": "/iAngels-proj/static/js/2.ab94b47d.chunk.js.map",
+    "index.html": "/iAngels-proj/index.html",
+    "static/css/main.cf89a188.chunk.css.map": "/iAngels-proj/static/css/main.cf89a188.chunk.css.map",
+    "static/js/2.ab94b47d.chunk.js.LICENSE.txt": "/iAngels-proj/static/js/2.ab94b47d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.469af378.js",
+    "static/js/2.ab94b47d.chunk.js",
+    "static/css/main.cf89a188.chunk.css",
+    "static/js/main.e320364c.chunk.js"
+  ]
+}
