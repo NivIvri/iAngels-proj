@@ -27,6 +27,7 @@ async function getCompanieData(keySerch) {
     }
 }
 async function getCompanieDateSearch(keySerch) {
+    debugger
     if (!keySerch) return []
     companieCache = storageService.loadFromStorage([keySerch+ 'SERCH'])
     if (companieCache) {
@@ -36,6 +37,8 @@ async function getCompanieDateSearch(keySerch) {
     try {
         const res = await axios.get(`https://api.polygon.io/v3/reference/tickers?search=${keySerch}&active=true&sort=ticker&order=asc&limit=5&apiKey=pv_VVp9rQJ7d8X4aU0wI8Fw2W_GHWVOD`)
         await storageService.saveToStorage([keySerch+ 'SERCH'], res.data.results)
+        debugger
+        if (!res.data.results) return null
         res.data.results.map(companie => {
             companie._id = utilService.makeId()
         })

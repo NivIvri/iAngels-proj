@@ -11,7 +11,7 @@ export class SearchCompanie extends Component {
     }
     delayedHandleChange = _.debounce(async () => {
         if (!this.state.keySearch) return
-        const result = await dataService.getCompanieDateSearch(this.state.keySearch.toUpperCase())
+        let result = await dataService.getCompanieDateSearch(this.state.keySearch.toUpperCase())
         if (!result) {
             result = []
         }
